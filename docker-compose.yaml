@@ -28,7 +28,6 @@ services:
       - internal
     volumes:
       - ./:/home/
-#    command: tail -F anything
 networks:
   internal:
     driver: bridge

@@ -24,8 +24,9 @@ class Client implements ServiceInterface {
         });
 
 
-        echo $executionTime;
-        echo $response->getStatusCode();
-        echo $response->getBody()->getContents();
+        echo '----------------------' . "\n";
+        echo 'Execution time: ' . $executionTime . ' milliseconds' . "\n";
+        echo 'Status code: ' . $response->getStatusCode() . "\n";
+        echo '----------------------' . "\n";
     }
 }
