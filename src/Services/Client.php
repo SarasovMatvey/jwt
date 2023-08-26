@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class Client implements Service {
+class Client implements ServiceInterface {
     public function run(): void {
         
     }

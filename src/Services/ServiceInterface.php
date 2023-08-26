@@ -2,6 +2,6 @@
 
 namespace App\Services;
 
-interface Service {
+interface ServiceInterface {
     function run(): void;
 }
