@@ -12,7 +12,7 @@ cd jwt
 
 3. Create configuration file:
 ``` bash
-mv .env.example .env
+mv config/.env.example config/.env
 ```
 
 3. Initialize project via Makefile:
@@ -32,11 +32,17 @@ make run
 make cs
 ```
 
-- Run tests:
+- Run speed tests:
 ``` bash
-speed-tests
+make speed-tests
 ```
 
+- Run functional tests:
 ``` bash
-functional-tests
+make functional-tests
+```
+
+- Run unit tests:
+``` bash
+make unit-tests
 ```
