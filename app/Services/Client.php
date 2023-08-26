@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers\Profiler;
 use Firebase\JWT\JWT;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -13,12 +14,17 @@ class Client implements ServiceInterface {
 
         $client = new GuzzleClient();
 
-        $response = $client->get('http://server/v1/foo', [
-            'headers' => [
-                'Authorization' => $token
-            ]
-        ]);
+        $response = null;
+        $executionTime = Profiler::getExecutionTime(function () use (&$response, $client, $token) {
+            $response = $client->get('http://server/v1/foo', [
+                'headers' => [
+                    'Authorization' => $token
+                ]
+            ]);
+        });
 
+
+        echo $executionTime;
         echo $response->getStatusCode();
         echo $response->getBody()->getContents();
     }
