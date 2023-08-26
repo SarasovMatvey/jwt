@@ -31,3 +31,12 @@ make run
 ``` bash
 make cs
 ```
+
+- Run tests:
+``` bash
+speed-tests
+```
+
+``` bash
+functional-tests
+```

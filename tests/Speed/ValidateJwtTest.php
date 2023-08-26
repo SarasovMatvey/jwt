@@ -2,18 +2,28 @@
 
 namespace Tests\Speed;
 
+use App\Config\Config;
+use App\Jwt\Jwt;
 use App\Services\Client\Client;
+use App\Services\Client\ResultFormatter;
+use Firebase\JWT\JWT as FirebaseJWT;
 use GuzzleHttp\Client as GuzzleClient;
 use Tests\CustomTestCase;
 use App\Helpers\Profiler;
 
 class ValidateJwtTest extends CustomTestCase
 {
-    public function testValidateJwt()
+    public function testValidateJwt(): void
     {
-        $ms = Profiler::getExecutionTime(function () {
+        $ms = (new Profiler)->getExecutionTime(function () {
             ob_start();
-            (new Client(new GuzzleClient()))->run();
+            (new Client(
+                guzzleClient: new GuzzleClient(),
+                resultFormatter: new ResultFormatter(),
+                config: new Config(),
+                jwt: new Jwt(new FirebaseJWT()),
+                profiler: new Profiler()
+            ))->run();
             ob_end_clean();
         });
 

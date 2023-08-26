@@ -12,6 +12,6 @@ class CustomTestCase extends TestCase
     {
         parent::setUp();
 
-        EnvExtractor::extract(__DIR__.'/../config/');
+        (new EnvExtractor)->extract(__DIR__.'/../config/');
     }
 }

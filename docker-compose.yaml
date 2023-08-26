@@ -31,11 +31,20 @@ services:
   speed-tests:
     build:
       context: .
-      dockerfile: docker/tests/Dockerfile
+      dockerfile: docker/speed-tests/Dockerfile
     networks:
       - internal
     volumes:
       - ./:/home/
+  functional-tests:
+    build:
+      context: .
+      dockerfile: docker/functional-tests/Dockerfile
+    networks:
+      - internal
+    volumes:
+      - ./:/home/
+
 networks:
   internal:
     driver: bridge

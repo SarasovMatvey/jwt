@@ -9,3 +9,9 @@ cs:
 
 speed-tests:
 	docker-compose up --build speed-tests
+
+functional-tests:
+	docker-compose up --build functional-tests
+
+unit-tests:
+	vendor/bin/phpunit tests/Unit

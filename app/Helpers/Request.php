@@ -9,7 +9,7 @@ trait Request
     /**
      * @throws Exception
      */
-    public static function getHeader(string $header): string
+    public function getHeader(string $header): string
     {
         $headers = getallheaders();
 
