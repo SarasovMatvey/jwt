@@ -478,3 +478,7 @@ composer.lock
 ##### Logs
 
 log/
+
+##### Env
+
+.env
