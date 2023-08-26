@@ -6,8 +6,10 @@ use App\Helpers\Profiler;
 use Firebase\JWT\JWT;
 use GuzzleHttp\Client as GuzzleClient;
 
-class Client implements ServiceInterface {
-    public function run(): void {
+class Client implements ServiceInterface
+{
+    public function run(): void
+    {
         $token = JWT::encode([
             'somePayload' => 'somePayload'
         ], $_ENV['JWT_PRIVATE_KEY'], 'RS256');

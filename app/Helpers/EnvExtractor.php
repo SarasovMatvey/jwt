@@ -6,7 +6,8 @@ use Dotenv\Dotenv;
 
 class EnvExtractor
 {
-    public static function extract(string $envFileDirectory): void {
+    public static function extract(string $envFileDirectory): void
+    {
         Dotenv::createImmutable($envFileDirectory)->load();
     }
 }

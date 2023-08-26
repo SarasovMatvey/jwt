@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
-interface ServiceInterface {
-    function run(): void;
+interface ServiceInterface
+{
+    public function run(): void;
 }

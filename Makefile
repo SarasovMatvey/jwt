@@ -3,3 +3,6 @@ init:
 
 run:
 	docker-compose up --no-log-prefix client
+
+cs:
+	vendor/bin/php-cs-fixer fix app

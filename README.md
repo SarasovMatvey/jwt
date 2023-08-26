@@ -25,3 +25,9 @@ make init
 make run
 ```
 
+Additional info:
+
+- Run code style fixer:
+``` bash
+make cs
+```

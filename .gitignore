@@ -482,3 +482,7 @@ log/
 ##### Env
 
 .env
+
+##### CS Fixer
+
+.php-cs-fixer.cache

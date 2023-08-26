@@ -5,9 +5,11 @@ namespace App\Services\Server;
 use App\Services\ServiceInterface;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
+
 use function FastRoute\simpleDispatcher;
 
-class Server implements ServiceInterface {
+class Server implements ServiceInterface
+{
     protected string $uri;
 
     protected string $httpMethod;
@@ -19,7 +21,8 @@ class Server implements ServiceInterface {
         $this->routes = $routes;
     }
 
-    public function run(): void {
+    public function run(): void
+    {
         $dispatcher = simpleDispatcher(function (RouteCollector $r) {
             $this->linkRoutes($r);
         });
@@ -32,7 +35,8 @@ class Server implements ServiceInterface {
         );
     }
 
-    protected function handleRouteInfo(array $routeInfo): void {
+    protected function handleRouteInfo(array $routeInfo): void
+    {
         switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
                 http_response_code(404);
@@ -50,13 +54,15 @@ class Server implements ServiceInterface {
         }
     }
 
-    protected function linkRoutes(RouteCollector $r): void {
+    protected function linkRoutes(RouteCollector $r): void
+    {
         foreach ($this->routes->getAll() as $route) {
             $r->addRoute($route->getMethod(), $route->getRoute(), $route->getCb());
         }
     }
 
-    protected function initUri(): void {
+    protected function initUri(): void
+    {
         $uri = $_SERVER['REQUEST_URI'];
 
         if (false !== $pos = strpos($uri, '?')) {
@@ -66,7 +72,8 @@ class Server implements ServiceInterface {
         $this->uri = rawurldecode($uri);
     }
 
-    protected function initHttpMethod(): void {
+    protected function initHttpMethod(): void
+    {
         $this->httpMethod = $_SERVER['REQUEST_METHOD'];
     }
 }

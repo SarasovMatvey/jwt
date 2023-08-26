@@ -9,7 +9,8 @@ class Profiler
      *
      * @param callable $cb
      */
-    public static function getExecutionTime(callable $cb): float {
+    public static function getExecutionTime(callable $cb): float
+    {
         $start = microtime(true);
         $cb();
         return (microtime(true) - $start) * 1000;

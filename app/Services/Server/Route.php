@@ -2,7 +2,8 @@
 
 namespace App\Services\Server;
 
-class Route {
+class Route
+{
     protected string $method;
 
     protected string $route;
