@@ -6,3 +6,6 @@ run:
 
 cs:
 	vendor/bin/php-cs-fixer fix app
+
+speed-tests:
+	docker-compose up --build speed-tests

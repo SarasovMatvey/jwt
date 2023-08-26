@@ -5,6 +5,9 @@
             "App\\": "app/"
         }
     },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    },
     "authors": [
         {
             "name": "sarasov matvey",
@@ -18,6 +21,7 @@
         "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.23"
+        "friendsofphp/php-cs-fixer": "^3.23",
+        "phpunit/phpunit": "^10.3"
     }
 }

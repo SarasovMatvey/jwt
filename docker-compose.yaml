@@ -28,6 +28,14 @@ services:
       - internal
     volumes:
       - ./:/home/
+  speed-tests:
+    build:
+      context: .
+      dockerfile: docker/tests/Dockerfile
+    networks:
+      - internal
+    volumes:
+      - ./:/home/
 networks:
   internal:
     driver: bridge
