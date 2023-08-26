@@ -35,10 +35,10 @@ class Server implements ServiceInterface {
     protected function handleRouteInfo(array $routeInfo): void {
         switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
-                echo '404';
+                http_response_code(404);
                 break;
             case Dispatcher::METHOD_NOT_ALLOWED:
-                echo '405';
+                http_response_code(405);
                 break;
             case Dispatcher::FOUND:
                 $handler = $routeInfo[1];
