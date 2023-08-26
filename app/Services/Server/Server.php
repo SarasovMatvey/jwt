@@ -2,6 +2,7 @@
 
 namespace App\Services\Server;
 
+use App\Services\Server\Routes\Routes;
 use App\Services\ServiceInterface;
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;

@@ -1,6 +1,6 @@
 <?php
 
-use App\Services\Client;
+use App\Services\Client\Client;
 
 require_once __DIR__ . '/../bootstrap/bootstrap.php';
 
