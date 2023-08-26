@@ -10,17 +10,23 @@
 cd jwt
 ```
 
-3. Create configuration file:
+3. Install dependencies:
+
+``` bash
+composer install
+```
+
+4. Create configuration file:
 ``` bash
 mv config/.env.example config/.env
 ```
 
-3. Initialize project via Makefile:
+5. Initialize project via Makefile:
 ``` bash
 make init
 ```
 
-4. Finally - run :)
+6. Finally - run :)
 ``` bash
 make run
 ```
