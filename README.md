@@ -1,4 +1,4 @@
-Installation:
+## Installation:
 
 1. Download repository:
 ``` bash
@@ -25,7 +25,7 @@ make init
 make run
 ```
 
-Additional info:
+## Additional info:
 
 - Run code style fixer:
 ``` bash
