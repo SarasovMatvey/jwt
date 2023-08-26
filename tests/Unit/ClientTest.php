@@ -64,6 +64,7 @@ class ClientTest extends TestCase
         );
         $client->run();
         $output = ob_get_contents();
+        ob_end_clean();
 
         $this->assertEquals($fakeOutput, $output);
     }
